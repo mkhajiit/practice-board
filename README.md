@@ -1,50 +1,24 @@
-# React + TypeScript + Vite
+# CRA가 더 이상 지원을 안한다고 해서 VITE로 프로젝트를 시작했습니다
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 코딩 테스트 연습용 연습장입니다.
 
-Currently, two official plugins are available:
+하고 싶은 코드를 작성해보는 개인 연습장입니다.<br/>
+아마도 백준이나 프로그래머스 코딩테스트 문제를 풀기위한 연습장으로도 사용할 예정입니다.<br/>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 프론트 단순한 기능 만들어보기
 
-## Expanding the ESLint configuration
+### 1번 사칙연산
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### 2번 필터링
 
-- Configure the top-level `parserOptions` property like this:
+### 3번 사칙연산 구현 심화
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### 4번 조건에 맞지 않는 단어 제거
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### 5번 배열에 있는 단어를 검색하면 화면에 띄우기
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### 6번 입력한 텍스트를 메모장으로 저장하기
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## 백앤드 단순한 기능 만들어보기
+
+### 1번 자바로 사칙연산 함수 구현해보기
