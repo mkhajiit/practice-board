@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import SaveImage from './contents/SaveImage.tsx';
+import Search from './contents/Search.tsx';
 
 // 스타일드 컴포넌트
 const Layout = styled.div`
@@ -16,7 +16,7 @@ const Layout = styled.div`
 function BoardLayout() {
   return (
     <Layout>
-      <SaveImage />
+      <Search />
     </Layout>
   );
 }
