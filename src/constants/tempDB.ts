@@ -5,7 +5,3 @@ export interface Item {
   content: string;
   downloadUrl?: string; // 이미지url은 선택적
 }
-
-const tempDB: Item[] = [];
-
-export default tempDB;

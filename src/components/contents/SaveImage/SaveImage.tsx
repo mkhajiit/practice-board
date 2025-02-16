@@ -6,7 +6,6 @@
 import React, { useState } from 'react';
 import { storage } from '../../../firebase';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
-import tempDB from '../../../constants/tempDB';
 import randomNumberGenerator from '../../../constants/randomNumberGenerator';
 
 function SaveImage() {
@@ -37,7 +36,7 @@ function SaveImage() {
       console.log('이미지를 선택해주세요');
       return;
     }
-    const storageRef = ref(storage, `image/${image.name}_${Date.now()}`);
+    const storageRef = ref(storage, `image/${image.name}_${Date.now()}`); // 난수를 넣어서 파이어베이스에 중복저장을 막는다
     const uploadTask = uploadBytesResumable(storageRef, image);
 
     uploadTask.on(
@@ -55,16 +54,19 @@ function SaveImage() {
         console.log('File available at', downloadURL);
 
         setImageUrl(downloadURL);
+
+        // 비동기 문제로 업로드가 끝나고 url이 set되면 실행되도록 한다
+        const id = randomNumberGenerator(8);
+        const contents = { id: id, title: title, content: text, downloadUrl: downloadURL };
+
+        // 배열에 저장하면 페이지 이동하거나 새로고침시 초기화 되므로 로컬스토리지를 이용한다
+
+        const storedData = localStorage.getItem('db');
+        const tempDB = storedData ? JSON.parse(storedData) : []; // null인 경우 빈 배열로 할당
+        tempDB.push(contents);
+        localStorage.setItem('db', JSON.stringify(tempDB)); // 배열을 다시 저장
       }
     );
-    const id = randomNumberGenerator(8);
-    const contents = { id: id, title: title, content: text, downloadUrl: imageUrl };
-
-    // 배열에 저장하면 페이지 이동하거나 새로고침시 초기화 되므로 로컬스토리지를 이용한다
-
-    tempDB.push(contents);
-    localStorage.setItem('db', JSON.stringify(tempDB)); // (key, json화)
-    console.log(tempDB);
   };
 
   // 입력한 텍스트를 메모장으로 다운로드하는 함수

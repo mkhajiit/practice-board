@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Item } from '../../../constants/tempDB';
 
 function ContentsList() {
@@ -8,10 +9,19 @@ function ContentsList() {
     <div>
       <h1>컨탠츠 리스트</h1>
       <h3>
-        {database.map((element) => (
-          <h1>{element.title}</h1>
-        ))}
+        <ul>
+          {database.map((element) => (
+            <li key={element.id}>
+              <Link to={`/contents/saved-content/${element.id}`}>
+                <h1>{element.title}</h1>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </h3>
+      <Link to={`/contents/register`}>
+        <button>글 쓰기</button>
+      </Link>
     </div>
   );
 }

@@ -1,11 +1,13 @@
+// 1. 이미지가 로드 되고나서 페이지가 뜨도록 수정해보기
 import { useParams } from 'react-router-dom';
 import { Item } from '../../../constants/tempDB';
 
 function SaveImageContent() {
   const storedData = localStorage.getItem('db');
   const database: Item[] = storedData ? JSON.parse(storedData) : []; // storedData가 null 인경우 빈배열 할당
+
   const { item } = useParams();
-  const contentArr = database.filter((element) => element.title === item);
+  const contentArr = database.filter((element) => element.id === item);
   return (
     <div>
       <h1>{contentArr[0].title}</h1>

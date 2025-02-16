@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import SaveImage from './contents/SaveImage/SaveImage.tsx';
+
+import { Outlet } from 'react-router-dom';
 
 // 스타일드 컴포넌트
 const Layout = styled.div`
@@ -16,7 +17,7 @@ const Layout = styled.div`
 function BoardLayout() {
   return (
     <Layout>
-      <SaveImage />
+      <Outlet />
     </Layout>
   );
 }
