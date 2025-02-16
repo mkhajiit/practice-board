@@ -4,9 +4,10 @@
 // 4. form을 react-hook-form 라이브러리로 변경
 
 import React, { useState } from 'react';
-import { storage } from '../../firebase';
+import { storage } from '../../../firebase';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
-import tempDB from '../../constants/tempDB';
+import tempDB from '../../../constants/tempDB';
+import randomNumberGenerator from '../../../constants/randomNumberGenerator';
 
 function SaveImage() {
   const [title, setTitle] = useState<string>('');
@@ -36,7 +37,7 @@ function SaveImage() {
       console.log('이미지를 선택해주세요');
       return;
     }
-    const storageRef = ref(storage, `image/${image.name}`);
+    const storageRef = ref(storage, `image/${image.name}_${Date.now()}`);
     const uploadTask = uploadBytesResumable(storageRef, image);
 
     uploadTask.on(
@@ -56,7 +57,8 @@ function SaveImage() {
         setImageUrl(downloadURL);
       }
     );
-    const contents = { title: title, content: text, downloadUrl: imageUrl };
+    const id = randomNumberGenerator(8);
+    const contents = { id: id, title: title, content: text, downloadUrl: imageUrl };
 
     // 배열에 저장하면 페이지 이동하거나 새로고침시 초기화 되므로 로컬스토리지를 이용한다
 

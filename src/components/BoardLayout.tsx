@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import SaveImage from './contents/SaveImage.tsx';
+import SaveImage from './contents/SaveImage/SaveImage.tsx';
 
 // 스타일드 컴포넌트
 const Layout = styled.div`

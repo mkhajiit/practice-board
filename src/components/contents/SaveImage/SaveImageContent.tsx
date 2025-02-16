@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { Item } from '../../constants/tempDB';
+import { Item } from '../../../constants/tempDB';
 
 function SaveImageContent() {
   const storedData = localStorage.getItem('db');
