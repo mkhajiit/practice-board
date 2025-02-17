@@ -2,6 +2,7 @@
 // 2. 이미지를 파이어베이스에 업로드하는 페이지를 만든다.
 // 3. 업로드한 이미지를 화면에 띄우는 페이지를 만든다.
 // 4. form을 react-hook-form 라이브러리로 변경
+// 5. 로컬스토리지 저장을 mysql로 구현한 db에 저장하도록 변경
 
 import React, { useState } from 'react';
 import { storage } from '../../../firebase';
