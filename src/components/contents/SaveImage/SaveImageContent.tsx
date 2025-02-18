@@ -1,10 +1,9 @@
 // 1. 이미지가 로드 되고나서 페이지가 뜨도록 수정해보기
 import { useParams } from 'react-router-dom';
-import { Item } from '../../../constants/tempDB';
+import getDataBase from '../../../function/getDatabase';
 
 function SaveImageContent() {
-  const storedData = localStorage.getItem('db');
-  const database: Item[] = storedData ? JSON.parse(storedData) : []; // storedData가 null 인경우 빈배열 할당
+  const database = getDataBase();
 
   const { item } = useParams();
   const contentArr = database.filter((element) => element.id === item);

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import { Outlet } from 'react-router-dom';
+import Navigation from './Navigation';
 
 // 스타일드 컴포넌트
 const Layout = styled.div`
@@ -10,6 +11,7 @@ const Layout = styled.div`
   min-height: 400px;
   border: 5px solid #b33939;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 `;
@@ -17,6 +19,7 @@ const Layout = styled.div`
 function BoardLayout() {
   return (
     <Layout>
+      <Navigation />
       <Outlet />
     </Layout>
   );
