@@ -1,3 +1,5 @@
+// 1. 직업에 맞는 이미지가 출력되도록 구현해보기
+// 2. 리펙토링
 import { useState } from 'react';
 import drawItems, { IDrawItem } from '../../../constants/drawCase';
 
