@@ -4,16 +4,20 @@ import SearchItem from '../components/contents/SearchItem.tsx';
 import SaveImageContent from '../components/contents/SaveImage/SaveImageContent.tsx';
 import ContentsList from '../components/contents/SaveImage/ContentsList.tsx';
 import SaveImage from '../components/contents/SaveImage/SaveImage.tsx';
+import DrawLots from '../components/contents/DrawLots/DrawLots.tsx';
+import Search from '../components/contents/Search.tsx';
 
 function Router() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<BoardLayout />}>
-          <Route path='contents/:item' element={<SearchItem />} />
+          <Route path='contents/search' element={<Search />} />
+          <Route path='contents/search/:item' element={<SearchItem />} />
           <Route path='contents/register' element={<SaveImage />} />
-          <Route path='contents' element={<ContentsList />} />
+          <Route path='contents/list' element={<ContentsList />} />
           <Route path='contents/saved-content/:item' element={<SaveImageContent />} />
+          <Route path='contents/draw' element={<DrawLots />} />
         </Route>
       </Routes>
     </BrowserRouter>

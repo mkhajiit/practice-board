@@ -27,7 +27,7 @@ function Search() {
       <ul>
         {itemList.map((element, index) => (
           <li key={index}>
-            <Link to={`/contents/${element}`}>{element}</Link>
+            <Link to={`/contents/search/${element}`}>{element}</Link>
           </li>
         ))}
       </ul>
