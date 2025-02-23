@@ -6,12 +6,13 @@ export interface IDrawItem<T> {
 
 // {아이템 이름, 확률 가중치}
 const drawItems: IDrawItem<string>[] = [
-  { item: 'Warrior', weight: 15 },
-  { item: 'Archer', weight: 15 },
-  { item: 'Knight', weight: 10 },
-  { item: 'Mage', weight: 10 },
-  { item: 'Citizen', weight: 25 },
-  { item: 'Merchant', weight: 25 },
+  { item: 'warrior', weight: 15 },
+  { item: 'archer', weight: 15 },
+  { item: 'knight', weight: 10 },
+  { item: 'mage', weight: 10 },
+  { item: 'citizen', weight: 23 },
+  { item: 'merchant', weight: 23 },
+  { item: 'spacemarine', weight: 4 },
 ];
 
 export default drawItems;
