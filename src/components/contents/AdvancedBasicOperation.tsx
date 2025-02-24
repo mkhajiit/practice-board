@@ -8,17 +8,18 @@ function AdvancedBasicOperation() {
   const [input, setInput] = useState<string>('');
   const [result, setResult] = useState<number>(0);
 
-  const setArr = (input) => {
+  const setArr = (input: string) => {
     // 정규식으로 숫자와 연산자를 분리하여 배열로 반환 (match)
     const regex = /^(\d+)([+\-*/%])(\d+)$/;
     const match = input.match(regex);
     console.log(match);
 
     if (match) {
-      const num1 = parseFloat(match[1]);
-      const operator = match[2];
-      const num2 = parseFloat(match[3]);
-      const inputArr = [num1, operator, num2];
+      // 각 변수의 타입을 지정해야 타입에러가 발생하지 않는다
+      const num1: number = parseFloat(match[1]);
+      const operator: string = match[2];
+      const num2: number = parseFloat(match[3]);
+      const inputArr: [number, string, number] = [num1, operator, num2];
       console.log(inputArr);
       setError(false);
       return inputArr;
@@ -32,7 +33,7 @@ function AdvancedBasicOperation() {
     setInput(event.target.value);
   };
 
-  const calculate = (input) => {
+  const calculate = (input: string) => {
     const equation = setArr(input);
 
     if (equation) {
