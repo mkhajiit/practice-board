@@ -24,6 +24,9 @@ function Navigation() {
         <li>
           <Link to='/contents/draw'>직업가챠</Link>
         </li>
+        <li>
+          <Link to='/contents/operationtf'>텐서플로우 사칙연산</Link>
+        </li>
       </ul>
     </Navbar>
   );
