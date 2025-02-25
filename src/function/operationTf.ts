@@ -1,3 +1,4 @@
+// 반드시 리펙토링 해볼것
 import * as tf from '@tensorflow/tfjs';
 import { xs, ys } from '../constants/operationData';
 

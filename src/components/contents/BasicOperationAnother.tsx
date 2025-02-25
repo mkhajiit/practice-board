@@ -21,7 +21,7 @@ const operations: Record<Operation, { symbol: string; calc: (a: number, b: numbe
 function BasicOperationAnother() {
   const [firstNumber, setFirstVariable] = useState<number>(0); // 초기값이 있어서 타입지정 안해도 된다
   const [secondNumber, setSecondVariable] = useState<number>(0);
-  const [operationState, setOperationState] = useState<string>('plus');
+  const [operationState, setOperationState] = useState<Operation>('plus');
 
   const onChangeHandler =
     (setter: React.Dispatch<React.SetStateAction<number>>) =>
