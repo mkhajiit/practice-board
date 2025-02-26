@@ -1,4 +1,5 @@
-// 곱하기 빼기 나누기 추가해서 구현하기
+// 현실적으로 지금 데이터셋과 모델로는 구현이 불가능함
+// 좀더 공부를하고 시도해야 함
 import { useState } from 'react';
 import operationTf from '../../function/operationTf';
 
@@ -8,9 +9,9 @@ function OperationTf() {
   const [result, setResult] = useState<number>(0);
   const [loading, setLoading] = useState<boolean>(false);
 
-  const onClickEvent = async () => {
+  const onClickEvent = async (operator: number) => {
     setLoading(true);
-    const inputArr = [firstNumber, secondNumber];
+    const inputArr = [firstNumber, secondNumber, operator];
     const predict = await operationTf(inputArr);
     setResult(Math.round(predict));
     setLoading(false);
@@ -35,7 +36,8 @@ function OperationTf() {
         required
         size={10}
       ></input>
-      <button onClick={() => onClickEvent()}>더하기</button>
+      <button onClick={() => onClickEvent(0)}>더하기</button>
+      <button onClick={() => onClickEvent(1)}>빼기</button>
     </div>
   );
 }
