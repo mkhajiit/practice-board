@@ -7,18 +7,18 @@ export function generateBalancedDataset(numSamples: number) {
   const xs: number[][] = [];
   const ys: number[][] = [];
 
-  const smallFraction = 0.2; // 작은 숫자의 비율
-  const mediumFraction = 0.4; // 중간 숫자의 비율
+  const smallFraction = 0.4; // 작은 숫자의 비율
+  const mediumFraction = 0.6; // 중간 숫자의 비율
 
   const smallNumSamples = Math.floor(numSamples * smallFraction);
   const mediumNumSamples = Math.floor(numSamples * mediumFraction);
   // 큰 숫자 비율
-  const largeNumSamples = numSamples - smallNumSamples - mediumNumSamples;
+  // const largeNumSamples = numSamples - smallNumSamples - mediumNumSamples;
 
   // 작은 숫자 데이터셋 생성
   for (let i = 0; i < smallNumSamples; i++) {
-    const a = Math.floor(Math.random() * 100); // 0부터 99까지의 랜덤 정수 a를 생성
-    const b = Math.floor(Math.random() * 100); // 0부터 99까지의 랜덤 정수 b를 생성
+    const a = Math.floor(Math.random() * 10); // 0부터 9까지의 랜덤 정수 a를 생성
+    const b = Math.floor(Math.random() * 10); // 0부터 9까지의 랜덤 정수 b를 생성
     const operator = Math.random() > 0.5 ? 0 : 1; // 0 for addition, 1 for subtraction
 
     xs.push([a, b, operator]);
@@ -27,23 +27,23 @@ export function generateBalancedDataset(numSamples: number) {
 
   // 중간 숫자 데이터셋 생성
   for (let i = 0; i < mediumNumSamples; i++) {
-    const a = Math.floor(Math.random() * 10000); // 0부터 9999까지의 랜덤 정수 a를 생성
-    const b = Math.floor(Math.random() * 10000); // 0부터 9999까지의 랜덤 정수 b를 생성
+    const a = Math.floor(Math.random() * 100); // 0부터 99까지의 랜덤 정수 a를 생성
+    const b = Math.floor(Math.random() * 100); // 0부터 99까지의 랜덤 정수 b를 생성
     const operator = Math.random() > 0.5 ? 0 : 1; // 0 for addition, 1 for subtraction
 
     xs.push([a, b, operator]);
     ys.push([operator === 0 ? a + b : a - b]);
   }
 
-  // 큰 숫자 데이터셋 생성
-  for (let i = 0; i < largeNumSamples; i++) {
-    const a = Math.floor(Math.random() * 1000000000); // 0부터 999999999까지의 랜덤 정수 a를 생성
-    const b = Math.floor(Math.random() * 1000000000); // 0부터 999999999까지의 랜덤 정수 b를 생성
-    const operator = Math.random() > 0.5 ? 0 : 1; // 0 for addition, 1 for subtraction
+  // // 큰 숫자 데이터셋 생성
+  // for (let i = 0; i < largeNumSamples; i++) {
+  //   const a = Math.floor(Math.random() * 1000); // 0부터 999까지의 랜덤 정수 a를 생성
+  //   const b = Math.floor(Math.random() * 1000); // 0부터 999까지의 랜덤 정수 b를 생성
+  //   const operator = Math.random() > 0.5 ? 0 : 1; // 0 for addition, 1 for subtraction
 
-    xs.push([a, b, operator]);
-    ys.push([operator === 0 ? a + b : a - b]);
-  }
+  //   xs.push([a, b, operator]);
+  //   ys.push([operator === 0 ? a + b : a - b]);
+  // }
 
   return {
     xs: tf.tensor2d(xs, [numSamples, 3]),

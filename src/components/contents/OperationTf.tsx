@@ -28,6 +28,7 @@ function OperationTf() {
         onChange={(event) => setFirstNumber(Number(event.target.value))}
         required
         size={10}
+        maxLength={2}
       ></input>
       <input
         name='second'
@@ -35,6 +36,7 @@ function OperationTf() {
         onChange={(event) => setSecondNumber(Number(event.target.value))}
         required
         size={10}
+        maxLength={2}
       ></input>
       <button onClick={() => onClickEvent(0)}>더하기</button>
       <button onClick={() => onClickEvent(1)}>빼기</button>
