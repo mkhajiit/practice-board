@@ -5,7 +5,7 @@ import { generateBalancedDataset } from '../constants/operationData';
 // 모델 저장 경로
 const MODEL_PATH = 'localstorage://operation-model';
 // 데이터셋 400개
-const dataset = generateBalancedDataset(800);
+const dataset = generateBalancedDataset(3000);
 const xs = dataset.xs;
 const ys = dataset.ys;
 // 모델 생성 함수

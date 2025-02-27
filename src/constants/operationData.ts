@@ -7,8 +7,8 @@ export function generateBalancedDataset(numSamples: number) {
   const xs: number[][] = [];
   const ys: number[][] = [];
 
-  const smallFraction = 0.4; // 작은 숫자의 비율
-  const mediumFraction = 0.6; // 중간 숫자의 비율
+  const smallFraction = 0.3; // 작은 숫자의 비율
+  const mediumFraction = 0.7; // 중간 숫자의 비율
 
   const smallNumSamples = Math.floor(numSamples * smallFraction);
   const mediumNumSamples = Math.floor(numSamples * mediumFraction);
