@@ -27,6 +27,9 @@ function Navigation() {
         <li>
           <Link to='/contents/operationtf'>텐서플로우 사칙연산</Link>
         </li>
+        <li>
+          <Link to='/contents/filter'>배열 필터링</Link>
+        </li>
       </ul>
     </Navbar>
   );

@@ -1,4 +1,5 @@
 // 타입 스크립트와 객체만을 이용해 구현한 사칙연산
+// 반드시 리펙토링하면서 코드리뷰할것
 import React, { useState } from 'react';
 import styled from 'styled-components';
 

@@ -30,6 +30,8 @@ function OperationTf() {
         size={10}
         maxLength={2}
       ></input>
+      <br />
+      <label htmlFor='second'>두번째 수를 입력해주세요</label>
       <input
         name='second'
         value={secondNumber}

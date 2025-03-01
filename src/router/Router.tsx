@@ -7,6 +7,7 @@ import SaveImage from '../components/contents/SaveImage/SaveImage.tsx';
 import DrawLots from '../components/contents/DrawLots/DrawLots.tsx';
 import Search from '../components/contents/Search.tsx';
 import OperationTf from '../components/contents/OperationTf.tsx';
+import Filter from '../components/contents/Filter.tsx';
 
 function Router() {
   return (
@@ -20,6 +21,7 @@ function Router() {
           <Route path='contents/saved-content/:item' element={<SaveImageContent />} />
           <Route path='contents/draw' element={<DrawLots />} />
           <Route path='contents/operationtf' element={<OperationTf />} />
+          <Route path='contents/filter' element={<Filter />} />
         </Route>
       </Routes>
     </BrowserRouter>

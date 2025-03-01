@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 
 function SearchItem() {
+  // 파라미터 가져오는 훅
   const { item } = useParams();
   return (
     <div>
