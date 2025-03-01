@@ -49,3 +49,4 @@ word2vec 라이브러리 써서 문자열을 이해할 수 있는 데이터로 �
 #### 내일 할일
 
 git에 새로운 branch develop와 그 아래에 jh 을 만들어 개발 환경용으로 사용하기
+BasicOperationAnother 컴포넌트 리펙토링
