@@ -9,9 +9,10 @@ const DisplayBox = styled.div`
   }
   text-align: center;
 `;
-
+//유니온 타입 설정으로 Operation은 'plus', 'minus', 'times', 'division' 중 하나의 문자열 값만 가질 수 있다
 type Operation = 'plus' | 'minus' | 'times' | 'division';
 
+//Record<K,V> 타입 매핑 유틸리티 특정 키(K)에 대한 값을 V타입으로 제한
 const operations: Record<Operation, { symbol: string; calc: (a: number, b: number) => number }> = {
   plus: { symbol: '+', calc: (a, b) => a + b },
   minus: { symbol: '-', calc: (a, b) => a - b },
