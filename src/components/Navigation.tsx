@@ -16,7 +16,7 @@ function Navigation() {
     <Navbar>
       <ul>
         <li>
-          <Link to='/'>홈</Link>
+          <Link to='/'>Home</Link>
         </li>
         <li>
           <Link to='/introduce-myself'>자기 소개</Link>

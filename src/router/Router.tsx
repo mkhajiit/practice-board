@@ -11,6 +11,7 @@ import Filter from '../components/contents/Filter.tsx';
 import PracticePage from '../pages/PracticePage.tsx';
 import HomePage from '../pages/HomePage.tsx';
 import IntroducePage from '../pages/IntroducePage.tsx';
+import NotFound from '../pages/NotFound.tsx';
 
 // index 속성이 있는 Route는 현재 라우트의 기본 경로(즉, /)에서만 렌더링됨
 function Router() {
@@ -31,6 +32,8 @@ function Router() {
           </Route>
           <Route path='/introduce-myself' element={<IntroducePage />} />
         </Route>
+        {/* path="*"는 모든 경로에 해당하지 않는 URL을 처리하는 역할을 함*/}
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
