@@ -1,8 +1,13 @@
 import { Link } from 'react-router-dom';
 
-// 링크로 관리
+type Link = {
+  to: string;
+  label: string;
+};
+
+// 링크배열로 목록 관리
 function PracticeList() {
-  const links = [
+  const links: Link[] = [
     { to: '/contents/list', label: 'SaveImage' },
     { to: '/contents/search', label: 'SearchText' },
     { to: '/contents/draw', label: '직업가챠' },
