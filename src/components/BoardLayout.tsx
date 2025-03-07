@@ -4,7 +4,18 @@ import { Outlet } from 'react-router-dom';
 import Navigation from './Navigation';
 
 // 스타일드 컴포넌트
-const Layout = styled.div`
+const MainContainer = styled.div`
+  width: 100%;
+  height: 60%;
+  min-width: 500px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+const ContentsLayout = styled.div`
   width: 100%;
   height: auto;
   min-width: 320px;
@@ -24,12 +35,14 @@ const Layout = styled.div`
   }
 `;
 
-function BoardLayout() {
+function BoardLayout({ toggleTheme }: { toggleTheme: () => void }) {
   return (
-    <Layout>
-      <Navigation />
-      <Outlet />
-    </Layout>
+    <MainContainer>
+      <Navigation toggleTheme={toggleTheme} />
+      <ContentsLayout>
+        <Outlet />
+      </ContentsLayout>
+    </MainContainer>
   );
 }
 

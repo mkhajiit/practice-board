@@ -13,12 +13,16 @@ import HomePage from '../pages/HomePage.tsx';
 import IntroducePage from '../pages/IntroducePage.tsx';
 import NotFound from '../pages/NotFound.tsx';
 
+type RouterProps = {
+  toggleTheme: () => void; // toggleTheme prop 타입 추가
+};
+
 // index 속성이 있는 Route는 현재 라우트의 기본 경로(즉, /)에서만 렌더링됨
-function Router() {
+function Router({ toggleTheme }: RouterProps) {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<BoardLayout />}>
+        <Route path='/' element={<BoardLayout toggleTheme={toggleTheme} />}>
           <Route index element={<HomePage />} />
           <Route path='contents' element={<PracticePage />}>
             <Route path='search' element={<Search />} />

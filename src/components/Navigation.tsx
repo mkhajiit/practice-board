@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import ThemeToggleButton from './ThemeToggleButton';
 
 const Navbar = styled.div`
   ul {
@@ -11,7 +12,8 @@ const Navbar = styled.div`
     margin-right: 15px; /* 항목 간의 간격을 조정 */
   }
 `;
-function Navigation() {
+
+function Navigation({ toggleTheme }: { toggleTheme: () => void }) {
   return (
     <Navbar>
       <ul>
@@ -24,6 +26,7 @@ function Navigation() {
         <li>
           <Link to='/contents'>연습한 과제들</Link>
         </li>
+        <ThemeToggleButton toggleTheme={toggleTheme} />
       </ul>
     </Navbar>
   );
