@@ -13,6 +13,7 @@ const Navbar = styled.div`
   }
 `;
 
+// prop을 전달받기 위해 prop과 타입을 설정
 function Navigation({ toggleTheme }: { toggleTheme: () => void }) {
   return (
     <Navbar>

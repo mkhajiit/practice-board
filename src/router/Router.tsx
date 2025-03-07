@@ -17,11 +17,13 @@ type RouterProps = {
   toggleTheme: () => void; // toggleTheme prop 타입 추가
 };
 
+// prop을 전달받기 위해서 theme을 설정
 // index 속성이 있는 Route는 현재 라우트의 기본 경로(즉, /)에서만 렌더링됨
 function Router({ toggleTheme }: RouterProps) {
   return (
     <BrowserRouter>
       <Routes>
+        {/* BoardLayout에 prop을 전달받기 위해 여기에 설정해야함 */}
         <Route path='/' element={<BoardLayout toggleTheme={toggleTheme} />}>
           <Route index element={<HomePage />} />
           <Route path='contents' element={<PracticePage />}>
