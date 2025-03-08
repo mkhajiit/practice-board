@@ -16,6 +16,7 @@ function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const theme = isDarkMode ? darkTheme : lightTheme;
 
+  // 로컬 스토리지 저장 추가할 것
   const toggleTheme = () => {
     setIsDarkMode((prev) => !prev);
   };
