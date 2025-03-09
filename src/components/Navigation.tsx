@@ -14,6 +14,8 @@ const Navbar = styled.div`
 `;
 
 // prop을 전달받기 위해 prop과 타입을 설정
+// css yes24 참고해서 비슷하게 바꾸기
+// yes24 모바일웹처럼 터치하면 슬라이드로 목록이 왼쪽에서 오른쪽으로 넘어가도록
 function Navigation({ toggleTheme }: { toggleTheme: () => void }) {
   return (
     <Navbar>
