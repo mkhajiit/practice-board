@@ -12,6 +12,7 @@ import PracticePage from '../pages/PracticePage.tsx';
 import HomePage from '../pages/HomePage.tsx';
 import IntroducePage from '../pages/IntroducePage.tsx';
 import NotFound from '../pages/NotFound.tsx';
+import JavaHttpCommunication from '../components/contents/JavaHttpCommunication.tsx';
 
 type RouterProps = {
   toggleTheme: () => void; // toggleTheme prop 타입 추가
@@ -35,6 +36,7 @@ function Router({ toggleTheme }: RouterProps) {
             <Route path='draw' element={<DrawLots />} />
             <Route path='operationtf' element={<OperationTf />} />
             <Route path='filter' element={<Filter />} />
+            <Route path='jcommunication' element={<JavaHttpCommunication />} />
           </Route>
           <Route path='/introduce-myself' element={<IntroducePage />} />
         </Route>

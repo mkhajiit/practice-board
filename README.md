@@ -51,6 +51,11 @@ word2vec 라이브러리 써서 문자열을 이해할 수 있는 데이터로 �
 
 ### 5번 자바를 이용해 백앤드 앤드 포인트 구현해보기
 
+Access to XMLHttpRequest at 'http://localhost:8080/api/message' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+
+CORS로 인한 에러 발생
+해결방법: 자바 백앤드에서 해더에 CORS를 설정해줘서 해결했음
+
 #### 수정 된 것
 
 25-03-05 포트폴리오 페이지로 사용하기 위해 홈화면을 만들고 네비게이션을 새로 만들었음

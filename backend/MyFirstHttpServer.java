@@ -18,8 +18,12 @@ public class MyFirstHttpServer {
     }
         // 클래스가 실행되면 자동 실행되는 handle에 엔드포인트 요청시 자동생성되는 HttpExchange 객체를 전달함
     static class MessageHandler implements HttpHandler{
+        @Override
         public void handle(HttpExchange exchange) throws IOException{
-            String response = "백앤드에서 보낸 메시지 입니다.";
+            // CORS 헤더 추가(추가 안하면 CORS 에러 발생함)
+            exchange.getResponseHeaders().set("Access-Control-Allow-Origin", "*");
+
+            String response = "백앤드에서 보낸 메시지 입니다. 안녕하세요 여기는 자바 입니다.";
             // response.getBytes()는 응답 메시지를 바이트 배열로 변환하는 코드
             exchange.sendResponseHeaders(200, response.getBytes().length);
             // OutputStream은 응답 데이터를 기록하는 객체
