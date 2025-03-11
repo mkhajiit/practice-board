@@ -10,6 +10,7 @@ import java.net.InetSocketAddress;
 public class MyFirstHttpServer {
     public static void main(String[] args) throws IOException {
         // 8080 포트 사용 대기열 크기를 0 으로 해서 시스템 기본값을 사용
+        // Http 서버 생성
         HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
         server.createContext("/api/message", new MessageHandler());
         // 요청을 처리할 스레드 풀(thread pool) 설정

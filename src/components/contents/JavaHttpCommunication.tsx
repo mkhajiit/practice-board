@@ -20,11 +20,23 @@ function JavaHttpCommunication() {
     fetchJavaMessage();
   }, []);
 
+  const handleOnClickEvent = async () => {
+    const response = await axios.post('http://localhost:8080/api/message', inputMessage);
+    const message = response.data;
+    console.log(message);
+  };
   return (
     <div>
       <h1>자바와 통신해 보아요</h1>
       <h2>자바가 보낸 메시지입니다.</h2>
       <h4>{javaMessage}</h4>
+      <h4>자바에게 매세지를 보내봅시다</h4>
+      <input
+        type='string'
+        value={inputMessage}
+        onChange={(event) => setInputMessage(event.target.value)}
+      ></input>
+      <button onClick={handleOnClickEvent}>전송</button>
     </div>
   );
 }
