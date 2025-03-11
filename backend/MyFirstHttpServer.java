@@ -7,6 +7,8 @@ import java.io.InputStreamReader;
 import java.io.BufferedReader;
 import java.net.InetSocketAddress;
 
+// InputStream: 데이터를 읽기 위한 클래스로 클라이언트가 서버로 보낸 데이터(요청 본문)나 서버에서 파일을 읽을 때 사용됨
+// OutputStream: 데이터를 쓰기 위한 클래스로 서버가 클라이언트에게 응답을 보낼 때 사용 됨
 public class MyFirstHttpServer {
     public static void main(String[] args) throws IOException {
         // 8080 포트 사용 대기열 크기를 0 으로 해서 시스템 기본값을 사용
@@ -59,14 +61,19 @@ public class MyFirstHttpServer {
     // POST 요청 처리
     private static void handlePostRequest(HttpExchange exchange) throws IOException {
         // 요청 본문 읽기
+        // InputStreamReader() 로 바이트를 텍스트(UTF-8)로 변환 시킨다
         InputStreamReader isr = new InputStreamReader(exchange.getRequestBody(), "UTF-8");
+        // InputStreamReader를 BufferedReader로 감싸면, 한줄 단위로 읽을 수 있어 성능이 향상되고 더 쉽게 처리할 수 있다
+        // BufferedReader는 Reader의 성능을 향상시키기 위해 사용
         BufferedReader br = new BufferedReader(isr);
+        // 요청 본문을 담을 StringBuilder 객체를 생성
         StringBuilder requestBody = new StringBuilder();
         String line;
+        // 요청 본문이 여러 줄일 수 있기 때문에, 이를 계속 읽어서 하나의 문자열로 결합
         while ((line = br.readLine()) != null) {
-            requestBody.append(line);
+            requestBody.append(line); // 읽은 한 줄을 requestBody에 추가
         }
-        br.close();
+        br.close(); // 리소스 해제
 
         System.out.println("POST 요청 데이터: " + requestBody);
 
