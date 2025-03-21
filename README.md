@@ -43,6 +43,8 @@ word2vec 라이브러리 써서 문자열을 이해할 수 있는 데이터로 �
 
 리포지토리 링크: https://github.com/mkhajiit/ai-advanture
 
+Vercel 배포 링크: https://ai-advanture-git-main-mkhajiits-projects.vercel.app
+
 ### 12번 11번과 같은 방법으로 선택지 4개의 영어단어 의미 맞추는 자동 생성 단어장 만들기
 
 ## 백앤드 단순한 기능 만들어보기
