@@ -92,6 +92,8 @@ export const GlobalStyle = createGlobalStyle`
     scroll-margin-block: 5ex;
   }
 
+  /* 여기까지 css reset 입니다.*/
+  
   body{
   background-color: ${(props) => props.theme.bgColor};
   color: ${(props) => props.theme.textColor};
