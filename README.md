@@ -68,6 +68,8 @@ Access to XMLHttpRequest at 'http://localhost:8080/api/message' from origin 'htt
 CORS로 인한 에러 발생
 해결방법: 자바 백앤드에서 해더에 CORS를 설정해줘서 해결했음
 
+## 프로그래머스 백준 코딩테스트 문제 풀이
+
 #### 수정 된 것
 
 25-03-05 포트폴리오 페이지로 사용하기 위해 홈화면을 만들고 네비게이션을 새로 만들었음
