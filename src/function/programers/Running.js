@@ -14,3 +14,24 @@ function solution(players, callings) {
   return answer;
 }
 */
+
+// Map을 사용해서 시간 복잡도를 해결한 코드
+function solution(players, callings) {
+  var answer = [];
+  const playerMap = new Map();
+
+  players.forEach((player, index) => playerMap.set(player, index));
+
+  callings.forEach((calling) => {
+    const callingIndex = playerMap.get(calling);
+    const prevPlayer = players[callingIndex - 1];
+
+    players[callingIndex - 1] = calling;
+    players[callingIndex] = prevPlayer;
+
+    playerMap.set(calling, callingIndex - 1);
+    playerMap.set(prevPlayer, callingIndex);
+  });
+  answer = players;
+  return answer;
+}
