@@ -13,3 +13,7 @@ function solution(my_string, overwrite_string, s) {
   answer = my_string.slice(0, s) + overwrite_string + my_string.slice(s + overwrite_string.length);
   return answer;
 }
+
+// 문제가 발생한 지점
+// splice를 사용했는데 splice는 원본 문자열을 바꿔서 두번째 자르기때 원치 않는 동작이 이루어짐
+// 해결: 원본 문자열을 건드리지 않는 slice를 사용해서 해결함
