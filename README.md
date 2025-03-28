@@ -96,6 +96,8 @@
 - `Access to XMLHttpRequest at 'http://localhost:8080/api/message'` 에러 해결
 - CORS 정책을 해결하기 위해 자바 백엔드에서 CORS 헤더 설정
 
+#### 6. 자바 자주 사용하는 메서드 정리
+
 #### 내일 할일
 
 지금 구현한 다크모드는 Router와 App BoardLayout으로 이어지는 컴포넌트가 쌓이는 구조라
