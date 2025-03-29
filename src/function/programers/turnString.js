@@ -16,3 +16,4 @@ rl.on('line', function (line) {
     return console.log(element);
   });
 });
+// 단순하게 split으로 문자열을 분리하고 map으로 한줄씩 출력해주면 됨
